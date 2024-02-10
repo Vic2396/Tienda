@@ -1,60 +1,46 @@
 package app;
 
 import leer.Leer;
+import menu.Menu;
 
+/**
+ * Clase main de la aplicacion
+ * @author Victor
+ * @version v0.1
+ * @since 06/02/24
+*/
 public class Aplicacion {
-	public static void Mensaje_Inicial() {
 
-		System.out.println("Bienvenido a la tienda virtual\n\n"
-				+ "El programa simula una tienda que vende juegos, música y cine\n"
-				+ "Solamente se pueden vender productos si aparecen disponibles en la tienda\n"
-		);
-	}
-
-	
-	public static void Opciones_Menu() {
-
-		System.out.println("\nSeleccione que desea realizar:\n\n" + "\t1. Mostrar productos. (Lista productos)\n"
-				+ "\t2. Comprar productos\n" + "\t3. Mostrar caja. (Importe total de la compra actual)\n"
-				+ "\tSALIR --> Pulse cualquier otro número\n");
-	}
-
-	public static void Mensaje_Fin() {
-
-		System.out.println("---- Gracias por usar este software. ----");
-	}
-
-	
-
+	/**
+	 * Metodo que ejecuta una opcion de menu e imprime mensaje inicial y final
+	 * @param args Argumentos del programa
+	 */
 	public static void main(String[] args) {
 
-		Mensaje_Inicial();
+		Menu.Mensaje_Inicial(); 	/** Ejecuta metodo de clase Menu que imprime mensaje inicial */
 
 		boolean continuar = true;
 
 		do {
 
-			Opciones_Menu();
+			Menu.Opciones_Menu(); 	/** Ejecuta metodo de clase Menu que muestra las opciones de menu */
 
 			switch (Leer.datoInt()) {
-			case 1:
+			case 1:					/** Opcion 1: mostrar productos (Lista productos) */
 
 				break;
-			case 2:
+			case 2:					/** Opcion 2: comprar productos */
 				
+				break;
+			case 3:					/** Opcion 3: mostrar caja (Importe total de la compra actual) */
 
 				break;
-			case 3:
-
-				break;
-			default:
-				// Se sale del programa
+			default: 				/** Opcion salir del menu */
 				continuar = false;
 			}
 
 		} while (continuar);
 
-		Mensaje_Fin();
-
+		Menu.Mensaje_Fin(); 		/** Ejecuta metodo de clase Menu que imprime mensaje fin */
 	}
 }
